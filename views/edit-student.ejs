@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Student</title>
+</head>
+<body>
+  <h1>Edit Student</h1>
+  <a href="/students">Back to Students</a>
+
+  <% /* Form to edit an existing student's details */ %>
+  <form action="/students/edit/<%= student.sid %>" method="POST">
+    <label for="sid">Student ID:</label>
+    <input type="text" id="sid" name="sid" value="<%= student.sid %>" disabled>
+    <br>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= student.name %>" minlength="2" required>
+    <br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" value="<%= student.age %>" min="18" required>
+    <br>
+
+    <button type="submit">Update Student</button>
+  </form>
+</body>
+</html>

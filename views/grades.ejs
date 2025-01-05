@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grades</title>
+</head>
+<body>
+  <h1>Grades</h1>
+  <a href="/">Home</a>
+  <a href="/students">Students</a>
+
+  <% /* Display grades in a table */ %>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Module Name</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (grades.length > 0) { %>
+        <% grades.forEach(grade => { %>
+          <tr>
+            <td><%= grade.student_name %></td>
+            <td><%= grade.module_name %></td>
+            <td><%= grade.grade %></td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr>
+          <td colspan="3">No grades found.</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
